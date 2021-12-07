@@ -28,4 +28,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Docker
-      run: docker build -f $(pwd)/actionsnetdemo/Dockerfile . -t test:${{steps.get_version.outputs.VERSION}}
+      run: echo ${{steps.get_version.outputs.VERSION}} && docker build -f $(pwd)/actionsnetdemo/Dockerfile . -t test:${{steps.get_version.outputs.VERSION}}
