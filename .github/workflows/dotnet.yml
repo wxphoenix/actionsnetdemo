@@ -28,7 +28,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Docker
-      run: docker build -f $(pwd)/actionsnetdemo/Dockerfile . -t test:${{steps.get_version.outputs.VERSION}} -t test:lastest
+      run: docker build -f $(pwd)/actionsnetdemo/Dockerfile . -t test:${{steps.get_version.outputs.VERSION}} -t test:latest
 
     - uses: appleboy/ssh-action@master
       with:
