@@ -39,8 +39,6 @@ jobs:
           docker stop test
           docker rm test
           docker run -p 5000:80 --name test -d test
-          docker rmi 94a6b4:2d615e5b7dc14a75b7da53e65b7f21ab
-          docker rmi 94a6b4:9bf4f3bf9f6745099c0d15ddc6bebe2b
           docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r docker rmi
           docker images --no-trunc | grep '94a6b4' | awk '{ print $3 }' | xargs -r docker rmi
           
